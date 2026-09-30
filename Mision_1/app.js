@@ -44,6 +44,7 @@ function moveBug() {
   const randomX = Math.floor(Math.random() * maxX);
   const randomY = Math.floor(Math.random() * maxY);
 
+  // aqui se muestra las coordenadas ya calculadas en el CSS
   bugEl.style.left = randomX + 'px';
   bugEl.style.top = randomY + 'px';
 
@@ -117,6 +118,7 @@ function endGame() {
 }
 
 // Escuchadores de eventos
+// "Si en algún momento el usuario presiona el botón del ratón justo encima de la zona que ocupa bugEl, despiértame e invoca catchBug()".
 startBtn.addEventListener('click', startGame);
 bugEl.addEventListener('click', catchBug);
 
