@@ -23,8 +23,7 @@ function startGame() {
   timerEl.textContent = timeLeft;
   statusMessage.textContent = '¡Caza los bugs 🐛! Ojo a los Dorados 🌟 y evita las Arañas 🕷️';
 
-  startBtn.disabled = true;
-  bugEl.classList.remove('hidden');
+  startBtn.disabled = true;     
 
   moveBug();
 
