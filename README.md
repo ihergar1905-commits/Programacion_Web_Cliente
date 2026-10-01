@@ -6,13 +6,13 @@ Bienvenido/a al repositorio oficial de entregas para la asignatura de Desarrollo
 
 ## 📂 Índice de Misiones
 
-### ⚔️️ Misión 1: Caza al Bug
+### ⚔️ [Misión 1: Caza al Bug](./Mision_1)
 * **Descripción:** Proyecto interactivo desarrollado en HTML, CSS y JS puro.
-* **Ubicación en el repo:** `/Mision_1`
+* **Ubicación en el repo:** [`/Mision_1`](./Mision_1)
 
-### 🍳 Misión 2: Async Odyssey (Culinary App)
+### 🍳 [Misión 2: Async Odyssey (Culinary App)](./Mision_2/m2-async-odyssey)
 * **Descripción:** Aplicación web modular con Vite, consumo de la API de TheMealDB (`async/await`, `fetch`) y manipulación dinámica del DOM.
-* **Ubicación en el repo:** `/Mision_2/m2-async-odyssey`
+* **Ubicación en el repo:** [`/Mision_2/m2-async-odyssey`](./Mision_2/m2-async-odyssey)
 
 ---
 
