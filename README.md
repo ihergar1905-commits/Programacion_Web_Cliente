@@ -6,21 +6,39 @@ Bienvenido/a al repositorio oficial de entregas para la asignatura de Desarrollo
 
 ## 📂 Índice de Misiones
 
-* **[⚔️ Misión 1: Caza al Bug](https://github.com/ihergar1905-commits/Reto_1/tree/main/Mision_1)**
-  * **Descripción:** Proyecto interactivo desarrollado en HTML, CSS y JS puro.
-  * **Ubicación en el repo:** `/Mision_1`
-  
+### ⚔️️ Misión 1: Caza al Bug
+* **Descripción:** Proyecto interactivo desarrollado en HTML, CSS y JS puro.
+* **Ubicación en el repo:** `/Mision_1`
+
+### 🍳 Misión 2: Async Odyssey (Culinary App)
+* **Descripción:** Aplicación web modular con Vite, consumo de la API de TheMealDB (`async/await`, `fetch`) y manipulación dinámica del DOM.
+* **Ubicación en el repo:** `/Mision_2/m2-async-odyssey`
+
 ---
 
 ## 🛠️ Estructura del Repositorio
 
 ```text
-Reto_1/
+WEB/
 ├── Mision_1/
 │   ├── index.html
 │   ├── styles.css
-│   ├── app.js
-│   └── README.md
+│   └── app.js
+├── Mision_2/
+│   └── m2-async-odyssey/
+│       ├── node_modules/
+│       ├── public/
+│       ├── src/
+│       │   ├── api.js
+│       │   ├── logic.js
+│       │   ├── main.js
+│       │   ├── render.js
+│       │   └── style.css
+│       ├── .gitignore
+│       ├── index.html
+│       ├── package-lock.json
+│       └── package.json
+├── mi-app/
 ├── app.js
 ├── index.html
 ├── prueba.html
