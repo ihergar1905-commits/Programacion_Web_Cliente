@@ -1,13 +1,35 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>m2-async-odyssey</title>
+    <title>Culinary Odyssey - Buscador de Recetas</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <h1>🍳 Culinary Odyssey</h1>
+      <!-- Formulario del buscador -->
+      <form id="search-form">
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Busca una receta (ej: chicken, pasta)..." 
+          required 
+        />
+        <button type="submit">Buscar</button>
+      </form>
+    </header>
+
+    <main>
+      <!-- Contenedor para el texto 'Cargando...' o errores -->
+      <div id="status-message"></div>
+
+      <!-- Parrilla donde render.js dibuja las tarjetas -->
+      <section id="recipes-container" class="recipes-grid"></section>
+    </main>
+
+    <!-- Conexión con nuestro JS -->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
