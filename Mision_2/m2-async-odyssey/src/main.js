@@ -1,6 +1,7 @@
 import { fetchRecipes } from './api.js';
 import { processRecipesList } from './logic.js';
 import { renderRecipes, renderStatus } from './render.js';
+import './style.css';
 
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
