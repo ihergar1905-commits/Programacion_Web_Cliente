@@ -7,16 +7,16 @@ export function formatRecipeData(rawMeal) {
   if (!rawMeal) return null;
 
   // Extraemos y filtramos los ingredientes y sus medidas
-  const ingredients = [];
+  const ingredientes = [];
   for (let i = 1; i <= 20; i++) {
-    const ingredient = rawMeal[`strIngredient${i}`];
+    const ingrediente = rawMeal[`strIngredient${i}`];
     const measure = rawMeal[`strMeasure${i}`];
 
-    if (ingredient && ingredient.trim() !== '') {
-      ingredients.push({
-        name: ingredient.trim(),
+    if (ingrediente && ingrediente.trim() !== '') {
+      ingredientes.push({
+        name: ingrediente.trim(),
         measure: measure ? measure.trim() : ''
-      });
+      }); 
     }
   }
 
@@ -28,7 +28,7 @@ export function formatRecipeData(rawMeal) {
     instructions: rawMeal.strInstructions || 'No hay instrucciones disponibles.',
     image: rawMeal.strMealThumb,
     youtube: rawMeal.strYoutube || null,
-    ingredients: ingredients
+    ingredientes: ingredientes
   };
 }
 
