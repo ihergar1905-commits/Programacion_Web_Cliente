@@ -123,3 +123,19 @@ button:hover {
   color: #666;
   line-height: 1.4;
 }
+
+#summary {
+  text-align: center;
+  color: #757575;
+  font-size: 14px;
+}
+
+.ingredients {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
