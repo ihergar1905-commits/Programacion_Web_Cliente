@@ -14,7 +14,7 @@ const searchButton = searchForm.querySelector('button');
 async function handleSearch(query) {
   try {
     searchButton.disabled = true; // evita lanzar varias peticiones a la vez
-    renderStatus('⏳ Carg ando deliciosas recetas...', 'loading');
+    renderStatus('⏳ Cargando deliciosas recetas...', 'loading');
     renderRecipes([]);
     renderSummary({});
 
