@@ -4,7 +4,7 @@ const statusContainer = document.getElementById('status-message');
 const summaryContainer = document.getElementById('summary');
 
 /**
- * Muestra un mensaje de estado en la interfaz.
+ * Muestra un mensaje de estado en la interfaz, puede ser de tipo 'info', 'error' o 'loading'.
  * @param {string} message - Texto del mensaje (vacío para limpiar).
  * @param {string} type - Tipo: 'info', 'error', 'loading'.
  */
