@@ -7,7 +7,7 @@ Bienvenido/a al repositorio oficial de entregas para la asignatura de Desarrollo
 ## 📂 Índice de Misiones
 
 ### ⚔️ [Misión 1: Caza al Bug](./Mision_1)
-* **Descripción:** Proyecto interactivo desarrollado en HTML, CSS y JS puro.
+* **Descripción:** Proyecto interactivo desarrollado en HTML, CSS y JS puro, con el README incluido.
 * **Ubicación en el repo:** [`/Mision_1`](./Mision_1)
 
 ### 🍳 [Misión 2: Async Odyssey (Culinary App)](./Mision_2/m2-async-odyssey)
@@ -23,7 +23,8 @@ WEB/
 ├── Mision_1/
 │   ├── index.html
 │   ├── styles.css
-│   └── app.js
+│   ├── app.js
+│   └── README.md
 ├── Mision_2/
 │   └── m2-async-odyssey/
 │       ├── node_modules/
