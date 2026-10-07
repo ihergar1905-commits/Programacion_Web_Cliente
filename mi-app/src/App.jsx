@@ -1,6 +1,7 @@
 import { Esclusa } from "./components/esclusa.jsx";
 import { FichaTripulante } from "./components/fichaTripulantes.jsx";
 import { Ranking } from "./components/ranking.jsx";
+import { Aplausometro } from "./components/aplausometro.jsx";
 
 // Datos de prueba para el ranking
 const RANKING_DATA = [
@@ -30,6 +31,12 @@ export default function App() {
       <section>
         <h2>Ranking Arcade</h2>
         <Ranking ranking={RANKING_DATA} />
+      </section>
+
+      {/* AÑADIDO AQUÍ */}
+      <section>
+        <h2>Aplausómetro</h2>
+        <Aplausometro />
       </section>
     </main>
   );
