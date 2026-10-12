@@ -69,24 +69,12 @@ Conforme a las directrices de la asignatura, se ha utilizado **Claude (Anthropic
 
 ## 🩺 Autopsia del código
 
-A continuación se detallan las decisiones técnicas aplicadas en la implementación:
+A continuación se detallan las 2 decisiones técnicas más discutibles tomadas durante la implementación y las alternativas que se descartaron:
 
-1. **Asincronía y gestión de errores (`async/await`, `try/catch/finally`):**
-   * *Decisión:* `fetchRecipes` es una función `async` que hace `await fetch(...)`, comprueba `response.ok` y lanza un error con `throw` si el servidor responde con un código de fallo. Ese error se relanza hasta `handleSearch` en `main.js`, que lo captura con `catch` y muestra el mensaje de error al usuario. El botón de búsqueda se desactiva al empezar y se reactiva en el bloque `finally`.
-   * *Justificación:* `fetch` solo falla por sí solo si no hay conexión, no ante un 404 o un 500, por lo que comprobar `response.ok` es imprescindible. Reactivar el botón en `finally` garantiza que nunca se quede bloqueado, ya sea tras un éxito, un error o una búsqueda sin resultados. Además, `api.js` solo obtiene datos y `main.js` decide qué ve el usuario.
+1. **Gestión de la caché en `localStorage` sin tiempo de expiración (TTL)**
+   * **Decisión tomada:** Se implementó una caché donde las respuestas de la API de TheMealDB se guardan indefinidamente bajo la clave `recipes:<término>`.
+   * **Alternativa descartada:** Incluir un sello de tiempo (*timestamp*) para invalidar o borrar la caché pasadas unas horas. Se descartó porque los menús e ingredientes de TheMealDB son datos estáticos que raramente cambian, y añadir lógica de expiración introducía complejidad innecesaria sin aportar un beneficio claro a la experiencia del usuario.
 
-2. **Caché en `localStorage` con tolerancia a fallos (Bonus):**
-   * *Decisión:* Las funciones `readCache` y `saveCache` envuelven `localStorage.getItem`/`setItem` y `JSON.parse`/`JSON.stringify` en `try/catch`. Las claves usan el prefijo `recipes:` más el término normalizado.
-   * *Justificación:* `localStorage` solo guarda texto, por lo que hay que convertir los datos con `JSON.stringify` al guardar y con `JSON.parse` al leer. Si la caché está corrupta o el almacenamiento falla, la app lo trata como "no hay caché" y consulta la API, por lo que nunca se rompe. Como limitación conocida, la caché no caduca.
-
-3. **Transformación de datos con métodos de array (sin bucles):**
-   * *Decisión:* En `logic.js`, los ingredientes de cada receta (que la API entrega como 20 campos sueltos `strIngredient1..20`) se construyen con `Array.from` + `.filter()`. La lista completa se limpia con `.map(formatRecipeData).filter(Boolean)` y el recuento por categoría se calcula con `.reduce()`.
-   * *Justificación:* Los tres métodos pedidos por el enunciado (`map`, `filter` y `reduce`) sustituyen a los bucles `for` y hacen el código más declarativo. Los valores por defecto (`||`) y la comprobación `Array.isArray` evitan que la app falle con datos incompletos o inesperados.
-
-4. **Separación de responsabilidades en módulos ES:**
-   * *Decisión:* El código se divide en cuatro módulos con una única responsabilidad cada uno: `api.js` (pedir datos), `logic.js` (transformarlos), `render.js` (pintarlos) y `main.js` (coordinar el flujo). Solo `main.js` está enlazado en `index.html` con `type="module"`; el resto se carga mediante `import`/`export`.
-   * *Justificación:* `render.js` solo recibe recetas ya limpias y no conoce el formato de la API, de modo que cambiar de API solo exigiría modificar `logic.js` y `api.js`. En el DOM se usa `textContent` cuando solo se escribe texto (resumen de categorías) e `innerHTML` para las tarjetas y mensajes, que se generan a partir de los datos de TheMealDB.
-
-5. **Robustez ante entradas y respuestas inesperadas:**
-   * *Decisión:* El campo de búsqueda tiene `required`, el texto se limpia con `trim()` y no se lanza ninguna búsqueda si queda vacío. El término se codifica con `encodeURIComponent` antes de añadirlo a la URL, y cuando la API devuelve `meals: null` (sin resultados) se convierte en un array vacío con `data.meals || []`.
-   * *Justificación:* Estas comprobaciones hacen que una búsqueda vacía, con caracteres especiales (como `&` o `%`) o sin resultados no provoque errores, y que la interfaz muestre siempre un mensaje claro ("No se encontraron recetas para tu búsqueda.").
+2. **Propagación directa de errores desde `api.js` hacia `main.js`**
+   * **Decisión tomada:** El módulo `api.js` no captura los errores de red para mostrar un mensaje, sino que hace un `throw error` para delegar el control a `main.js`, que es el orquestador encargado de llamar a `render.js`.
+   * **Alternativa descartada:** Capturar el error directamente dentro de `api.js` y devolver un array vacío `[]` o un objeto de error. Se descartó porque rompería la separación de responsabilidades: la capa de datos (`api.js`) no debe asumir la lógica de la interfaz visual, permitiendo que `main.js` distinga claramente entre "búsqueda sin resultados" (respuesta 200 con array vacío) y "fallo de conexión/servidor" (capturado en el `catch`).
