@@ -34,7 +34,8 @@ WEB/
 │       │   ├── logic.js
 │       │   ├── main.js
 │       │   ├── render.js
-│       │   └── style.css
+│       │   ├── style.css
+│       │   └── README.md
 │       ├── .gitignore
 │       ├── index.html
 │       ├── package-lock.json
