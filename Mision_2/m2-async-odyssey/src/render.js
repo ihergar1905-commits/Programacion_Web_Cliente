@@ -1,7 +1,7 @@
 // Referencias a las zonas del HTML
-const recipesContainer = document.getElementById('recipes-container');
-const statusContainer = document.getElementById('status-message');
-const summaryContainer = document.getElementById('summary');
+const recipesContainer = document.getElementById('recipes-container'); //<- Tarjetas de recetas
+const statusContainer = document.getElementById('status-message'); //<- Mensajes de estado (cargando, error, etc.)
+const summaryContainer = document.getElementById('summary'); //<- Resumen de categorías (Chicken: 5 · Pasta: 2)
 
 /**
  * Muestra un mensaje de estado en la interfaz, puede ser de tipo 'info', 'error' o 'loading'.
