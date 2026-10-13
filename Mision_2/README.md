@@ -26,19 +26,24 @@ Para no repetir peticiones ya hechas, cada búsqueda se guarda en `localStorage`
 
 ### 📁 Estructura del proyecto
 ```
-m2-async-odyssey/
-├── index.html        # Estructura de la página
+Mision_2/
+├── index.html          # Estructura de la página
 ├── package.json
+├── package-lock.json
+├── .gitignore
+├── README.md
 ├── public/
 └── src/
-    ├── api.js        # Capa de datos: fetch y caché
-    ├── logic.js      # Capa de lógica: transformación de datos
-    ├── render.js     # Capa de vista: pinta en el DOM
-    ├── main.js       # Orquesta el flujo de la búsqueda
-    └── style.css     # Estilos
+    ├── assets/
+    ├── api.js          # Capa de datos: fetch y caché
+    ├── logic.js        # Capa de lógica: transformación de datos
+    ├── render.js       # Capa de vista: pinta en el DOM
+    ├── main.js         # Orquesta el flujo de la búsqueda
+    └── style.css       # Estilos
 ```
 
 ### ▶️ Cómo ejecutarlo
+Desde la carpeta `Mision_2`:
 ```bash
 npm install
 npm run dev
@@ -50,19 +55,21 @@ npm run dev
 
 Conforme a las directrices de la asignatura, se ha utilizado **Claude (Anthropic)**, a través del chat de claude.ai, como asistente durante el desarrollo de la práctica.
 
-* **Modo de trabajo utilizado:** Trabajo guiado en dos fases. Primero, completar el código de cada módulo a partir del enunciado, pidiendo expresamente soluciones simples y sin funciones complicadas. Después, análisis detallado línea por línea de cada archivo (`api.js`, `logic.js`, `render.js`, `main.js`) para comprender el código antes de entregarlo.
+* **Modo de trabajo utilizado:** Trabajo guiado en tres fases. Primero, completar el código de cada módulo a partir del enunciado, pidiendo expresamente soluciones simples y sin funciones complicadas. Después, análisis detallado línea por línea de cada archivo (`api.js`, `logic.js`, `render.js`, `main.js`) para comprender el código antes de entregarlo. Por último, revisión de la corrección automática y reorganización del repositorio.
 * **Prompts principales utilizados (resumidos):**
   1. *"Completa los archivos de mi app según el enunciado, sin funciones difíciles de entender, de forma que se cumplan los requisitos y el bonus de la caché en localStorage."*
   2. *"Explícame línea por línea qué hace api.js: el fetch, la comprobación de response.ok, JSON.parse y encodeURIComponent."*
   3. *"Explícame logic.js: cómo se usan map, filter y reduce, y qué hacen Array.from, la flecha `=>` y el `_` en `(_, i)`."*
   4. *"Haz un análisis completo de render.js y de main.js, explicando qué hace cada línea y por qué: innerHTML, Object.entries, join, try/catch/finally y preventDefault."*
   5. *"¿Cómo compruebo que la caché, el estado de carga y el estado de error funcionan?"*
+  6. *"El corrector automático no detecta la tecnología (Vite, .js) en mi proyecto: ¿cómo reorganizo el repositorio para que package.json quede en la raíz de Mision_2?"*
 * **Verificación manual realizada:**
   * Se comprobó el funcionamiento en el navegador con Vite (`npm run dev`).
   * Se verificó la caché en la pestaña **Almacenamiento** de las herramientas de desarrollo: aparecen las entradas `recipes:chicken`, `recipes:pasta`, etc., y los mensajes `cargado desde la caché` en la consola.
   * En la pestaña **Red** se comprobó que una búsqueda nueva genera una única petición a `themealdb.com` con estado 200 y que repetirla no genera ninguna petición nueva.
   * Se probó el estado de error desconectando la red: una búsqueda nueva muestra el mensaje rojo, las búsquedas ya guardadas siguen funcionando desde la caché y, al recuperar la conexión, la app vuelve a funcionar sin recargar la página.
   * Se detectó y corrigió que una imagen no se cargaba correctamente.
+  * Se reorganizó el repositorio moviendo el proyecto Vite a la raíz de `Mision_2` (con `git mv`, para conservar el historial) y se comprobó que `npm run dev` sigue funcionando con la nueva estructura.
   * Se aseguró el cumplimiento de buenas prácticas: ausencia de variables declaradas con `var`, ausencia de bucles `for` para transformar datos y separación completa entre estructura (HTML), estilos (CSS) y comportamiento (JS en módulos).
 
 ---
