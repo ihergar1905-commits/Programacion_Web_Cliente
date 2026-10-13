@@ -6,7 +6,7 @@ const CACHE_PREFIX = 'recipes:';
 function readCache(key) {
   try {
     const saved = localStorage.getItem(key);
-    return saved ? JSON.parse(saved) : null;
+    return saved ? JSON.parse(saved) : null; //si hay texto, lo convierte en array
   } catch {
     return null;
   }
@@ -15,7 +15,7 @@ function readCache(key) {
 // Guarda en la caché. Si falla (almacenamiento lleno, etc.), la app sigue igual.
 function saveCache(key, data) {
   try {
-    localStorage.setItem(key, JSON.stringify(data));
+    localStorage.setItem(key, JSON.stringify(data)); //convierte el array en texto (localStorage solo guarda texto) y lo guarda
   } catch {
     // no pasa nada: simplemente no se cachea
   }
@@ -46,7 +46,7 @@ export async function fetchRecipes(query = '') {
       throw new Error(`Error en la petición: ${respuesta.status}`);
     }
 
-    const data = await respuesta.json();
+    const data = await respuesta.json(); //convierte el JSON de la respuesta en un objeto.
     const meals = data.meals || []; // la API devuelve null si no hay resultados
 
     saveCache(cacheKey, meals);
