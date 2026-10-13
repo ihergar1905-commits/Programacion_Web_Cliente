@@ -30,9 +30,9 @@ async function handleSearch(query) {
       return;
     }
 
-    renderStatus('');
-    renderSummary(countByCategory(cleanRecipes));
-    renderRecipes(cleanRecipes);
+    renderStatus(''); //borra el “Cargando...”, pero esta en estado "info" y no en "loading"
+    renderSummary(countByCategory(cleanRecipes)); //calcula el recuento y lo muestra
+    renderRecipes(cleanRecipes);  //pinta las tarjetas
   } catch (error) {
     console.error('Error durante la búsqueda:', error);
     renderStatus('❌ Ocurrió un error al cargar las recetas. Inténtalo de nuevo.', 'error');
