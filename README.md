@@ -10,38 +10,37 @@ Bienvenido/a al repositorio oficial de entregas para la asignatura de Desarrollo
 * **Descripción:** Proyecto interactivo desarrollado en HTML, CSS y JS puro, con el README incluido.
 * **Ubicación en el repo:** [`/Mision_1`](./Mision_1)
 
-### 🍳 [Misión 2: Async Odyssey (Culinary App)](./Mision_2/m2-async-odyssey)
-* **Descripción:** Aplicación web modular con Vite, consumo de la API de TheMealDB (`async/await`, `fetch`) y manipulación dinámica del DOM.
-* **Ubicación en el repo:** [`/Mision_2/m2-async-odyssey`](./Mision_2/m2-async-odyssey)
+### 🍳 [Misión 2: Async Odyssey (Culinary Odyssey)](./Mision_2)
+* **Descripción:** Aplicación web modular con Vite, consumo de la API de TheMealDB (`async/await`, `fetch`), transformación de datos con métodos de array, caché en `localStorage` y manipulación dinámica del DOM, con el README incluido.
+* **Ubicación en el repo:** [`/Mision_2`](./Mision_2)
 
 ---
 
 ## 🛠️ Estructura del Repositorio
 
 ```text
-WEB/
+Programacion_Web_Cliente/
 ├── Mision_1/
 │   ├── index.html
 │   ├── styles.css
 │   ├── app.js
 │   └── README.md
 ├── Mision_2/
-│   └── m2-async-odyssey/
-│       ├── node_modules/
-│       ├── public/
-│       ├── src/
-│       │   ├── api.js
-│       │   ├── logic.js
-│       │   ├── main.js
-│       │   ├── render.js
-│       │   ├── style.css
-│       │   └── README.md
-│       ├── .gitignore
-│       ├── index.html
-│       ├── package-lock.json
-│       └── package.json
+│   ├── public/
+│   ├── src/
+│   │   ├── api.js
+│   │   ├── logic.js
+│   │   ├── main.js
+│   │   ├── render.js
+│   │   └── style.css
+│   ├── .gitignore
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   └── README.md
 ├── mi-app/
 ├── app.js
 ├── index.html
 ├── prueba.html
 └── README.md (Este archivo de índice)
+```
