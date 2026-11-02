@@ -78,11 +78,13 @@ Se ha utilizado **Claude (Anthropic)** como asistente durante toda la misión.
   1. *«Te paso la corrección de la Misión 2: dime qué puntos son importantes para la Misión 3.»*
   2. *«Te paso el código de la Misión 2: propón cómo pasarlo a componentes de React con estado mínimo y valores derivados.»*
   3. *«Haz la Misión 3 con un custom hook para el bonus, sin cosas complicadas, y explícame por qué cada useEffect es necesario.»*
+  4. *«Quiero estudiar esta misión para la defensa desde cero, programa por programa, línea por línea.»*
+* **Qué hice a mano:** el código lo generó Claude; mi trabajo fue crear el proyecto con Vite, probar la app, hacer los commits y estudiar cada archivo línea por línea, pidiendo comentarios en el código para poder defenderlo.
 * **Verificación realizada:**
   * Claude probó la app en un navegador automatizado (Playwright) con respuestas simuladas de la API: búsqueda, filtro, orden, favoritos que se mantienen tras recargar, modal con Escape, modo despensa, mensaje de sin resultados, error 500 y la condición de carrera (una búsqueda lenta seguida de otra rápida muestra la rápida).
-  * En mi navegador, con `npm run dev` y la API real, comprobé la búsqueda, los filtros, el orden, los favoritos (y que siguen tras recargar) y el modal con el vídeo.
-  * En las herramientas de desarrollo: en **Red** comprobé que una búsqueda repetida no hace una petición nueva (caché), y en **Almacenamiento** vi las claves `recipes:<término>` y `culinary:favorites`.
-  * Ejecuté `npm run lint` sin errores.
+  * En mi navegador, con `npm run dev` y la API real, comprobé la búsqueda, el filtro por categoría, el orden, que los favoritos siguen tras recargar la página y la ventana de detalle con los ingredientes y el vídeo (se cierra con Escape).
+  * En las herramientas de desarrollo, pestaña **Red**, comprobé que repetir una búsqueda no hace una petición nueva a la API (caché).
+  * `npm run lint` (ESLint con las reglas de hooks de React) pasa sin errores.
 
 ---
 
