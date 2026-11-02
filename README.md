@@ -14,6 +14,10 @@ Bienvenido/a al repositorio oficial de entregas para la asignatura de Desarrollo
 * **Descripción:** Aplicación web modular con Vite, consumo de la API de TheMealDB (`async/await`, `fetch`), transformación de datos con métodos de array, caché en `localStorage` y manipulación dinámica del DOM, con el README incluido.
 * **Ubicación en el repo:** [`/Mision_2`](./Mision_2)
 
+### ⚛️ [Misión 3: Reactor Core (Culinary Odyssey en React)](./Mision_3)
+* **Descripción:** Reconstrucción de la Misión 2 en React 19 con Vite: componentes reutilizables con props, estado mínimo con `useState` y valores derivados, `useEffect` con cleanup (`AbortController` para evitar condiciones de carrera), listas con `key` estable y renderizado condicional. Añade filtro por categoría, ordenación, favoritos persistentes, ventana de detalle con ingredientes y vídeo, "modo despensa" y dos custom hooks (`useFetch` y `useLocalStorage`), con el README incluido.
+* **Ubicación en el repo:** [`/Mision_3`](./Mision_3)
+
 ---
 
 ## 🛠️ Estructura del Repositorio
@@ -37,6 +41,36 @@ Programacion_Web_Cliente/
 │   ├── index.html
 │   ├── package-lock.json
 │   ├── package.json
+│   └── README.md
+├── Mision_3/
+│   ├── public/
+│   │   └── favicon.svg
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── CategoryFilter.jsx
+│   │   │   ├── PantryChecklist.jsx
+│   │   │   ├── RecipeCard.jsx
+│   │   │   ├── RecipeGrid.jsx
+│   │   │   ├── RecipeModal.jsx
+│   │   │   ├── SearchForm.jsx
+│   │   │   ├── SortSelect.jsx
+│   │   │   └── StatusMessage.jsx
+│   │   ├── hooks/
+│   │   │   ├── useFetch.js
+│   │   │   └── useLocalStorage.js
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   ├── utils/
+│   │   │   └── logic.js
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── vite.config.js
 │   └── README.md
 ├── mi-app/
 ├── app.js
