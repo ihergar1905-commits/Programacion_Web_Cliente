@@ -17,42 +17,6 @@
       "dificultad": "fácil",
       "vegana": true,
       "ingredientes": "garbanzos, tomate, pepino, cebolla, aceite"
-    },
-    {
-      "nombre": "papapas",
-      "categoria": "Principal",
-      "minutos": 150,
-      "dificultad": "media",
-      "vegana": false,
-      "ingredientes": "huevo, lentejas, agua, fanta",
-      "id": "QQymObypKr0"
-    },
-    {
-      "nombre": "aaaaaaaaaaaaaaaaaaaaaaaa",
-      "categoria": "Postre",
-      "minutos": 12,
-      "dificultad": "difícil",
-      "vegana": false,
-      "ingredientes": "huevos, baicon, helado",
-      "id": "z8VwWD0yKy4"
-    },
-    {
-      "nombre": "roro",
-      "categoria": "Entrante",
-      "minutos": 130,
-      "dificultad": "fácil",
-      "vegana": false,
-      "ingredientes": "pescado",
-      "id": "KvUjGUA9yns"
-    },
-    {
-      "nombre": "qqqqqqqqqqqqqqqqqqqqqqqqqqqqq",
-      "categoria": "Principal",
-      "minutos": 10,
-      "dificultad": "media",
-      "vegana": false,
-      "ingredientes": "huevo",
-      "id": "suI9JPAoqFQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
