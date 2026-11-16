@@ -23,7 +23,7 @@ export const recipeSchema = z
   .refine( // regla extra que mira VARIOS campos a la vez
     (receta) => // recibe la receta entera...
       !receta.vegana || // ...si NO es vegana → vale, no hay nada que mirar
-      !NO_VEGANOS.some((palabra) => receta.ingredientes.toLowerCase().includes(palabra)), // si lo es → ningún ingrediente animal
+      !NO_VEGANOS.some((palabra) => receta.ingredientes.toLowerCase().includes(palabra)), // si lo es -> ningún ingrediente animal
     {
       message: 'Una receta vegana no puede llevar ingredientes de origen animal', // el mensaje de error
       path: ['ingredientes'], // debajo de qué campo sale el error
