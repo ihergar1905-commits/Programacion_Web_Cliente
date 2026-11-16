@@ -26,6 +26,15 @@
       "vegana": false,
       "ingredientes": "aguacate, agua, patata, perejil, sal",
       "id": "NysLTJxrgeY"
+    },
+    {
+      "nombre": "migas",
+      "categoria": "Principal",
+      "minutos": 180,
+      "dificultad": "fácil",
+      "vegana": false,
+      "ingredientes": "pan, cebolla, chorizo, uva, bacon, ajo",
+      "id": "wLgUKxpr_Nc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
