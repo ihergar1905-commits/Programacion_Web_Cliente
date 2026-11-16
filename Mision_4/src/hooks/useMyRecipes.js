@@ -9,6 +9,6 @@ export const MY_RECIPES_KEY = ['my-recipes'];
 export function useMyRecipes() {
   return useQuery({
     queryKey: MY_RECIPES_KEY, // con qué etiqueta se guarda en la pizarra
-    queryFn: getMyRecipes, // qué función llamar para conseguir los datos
+    queryFn: getMyRecipes, // qué función llamar para conseguir los datos (GET)
   });
 }
