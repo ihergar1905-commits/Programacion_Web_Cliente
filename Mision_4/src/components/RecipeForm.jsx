@@ -16,7 +16,7 @@ const VALORES_INICIALES = {
 // Componente pequeño: pinta el mensaje de error de un campo (o nada si no hay error)
 function FieldError({ id, error }) {
   if (!error) return null; // sin error → no pinta nada
-  return <p id={id} className="field-error" role="alert">{error.message}</p>; // role="alert" → el lector de pantalla lo lee en voz alta
+  return <p id={id} className="field-error" role="alert">{error.message}</p>; // role="alert" -> el lector de pantalla lo lee en voz alta
 }
 
 function RecipeForm() {
