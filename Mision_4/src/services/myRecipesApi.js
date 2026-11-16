@@ -6,7 +6,7 @@ const API_URL = 'http://localhost:3001/recipes'; // la dirección de tu json-ser
 export async function getMyRecipes() {
   const response = await fetch(API_URL); // llamamos al servidor (sin method = GET)
   if (!response.ok) { // si responde con error (404, 500...)
-    throw new Error(`El servidor respondió con error ${response.status}`); // lanzamos el error → TanStack lo verá
+    throw new Error(`El servidor respondió con error ${response.status}`); // lanzamos el error -> TanStack lo verá
   }
   const datos = await response.json(); // pasamos la respuesta de texto JSON a objetos de JS
   if (!Array.isArray(datos)) { // si no es una lista, algo va muy mal
