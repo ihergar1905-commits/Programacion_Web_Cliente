@@ -35,6 +35,15 @@
       "vegana": false,
       "ingredientes": "pan, cebolla, chorizo, uva, bacon, ajo",
       "id": "wLgUKxpr_Nc"
+    },
+    {
+      "nombre": "eeeee",
+      "categoria": "Principal",
+      "minutos": 90,
+      "dificultad": "fácil",
+      "vegana": false,
+      "ingredientes": "pan, huevo",
+      "id": "gPDvhZxHej8"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
