@@ -1,0 +1,87 @@
+/* ─────────────────────────────────────────────────────────────
+   Culinary Odyssey · Sistema de diseño con Tailwind CSS v4
+   Configuración CSS-first: todo vive aquí (sin tailwind.config.js)
+   ───────────────────────────────────────────────────────────── */
+
+/* 1. Carga Tailwind entero: reset (preflight) + todas las utilidades */
+@import "tailwindcss";
+
+/* 2. Modo oscuro por CLASE: dark: se activa cuando <html> tiene class="dark"
+      (así el usuario lo elige con el botón; por defecto se sigue al sistema) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 3. Tokens propios. Cada variable crea sus clases:
+      --color-tomate-600 → bg-tomate-600, text-tomate-600, border-tomate-600...
+      --font-display → font-display · --radius-tarjeta → rounded-tarjeta
+      --shadow-sello → shadow-sello · --animate-entrada → animate-entrada */
+@theme {
+  /* Tipografías: una con carácter para titulares y una legible para texto */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Paleta de cocina: papel crema, tomate, azafrán, oliva y carbón */
+  --color-crema-50: #fffaf2;
+  --color-crema-100: #fbf1e1;
+  --color-crema-200: #f3e2c7;
+  --color-crema-300: #e6cda6;
+
+  --color-tomate-300: #f8a08c;
+  --color-tomate-400: #f06a4f;
+  --color-tomate-500: #e0482d;
+  --color-tomate-600: #c23a22;
+  --color-tomate-700: #9c2f1c;
+
+  --color-azafran-200: #fde7b0;
+  --color-azafran-300: #fcd277;
+  --color-azafran-400: #f6b93b;
+  --color-azafran-500: #e09b14;
+
+  --color-oliva-200: #dde5bd;
+  --color-oliva-300: #b5c47f;
+  --color-oliva-500: #6b7f3a;
+  --color-oliva-700: #46542a;
+
+  --color-carbon-400: #9a8f86;
+  --color-carbon-500: #7a6f66;
+  --color-carbon-600: #5e544c;
+  --color-carbon-700: #3d3530;
+  --color-carbon-800: #2a2420;
+  --color-carbon-900: #1d1916;
+  --color-carbon-950: #14110f;
+
+  /* Formas y sombras de la marca */
+  --radius-tarjeta: 1.25rem;
+  --radius-boton: 999px;
+  --shadow-tarjeta: 0 1px 0 rgb(29 25 22 / 0.06), 0 18px 40px -24px rgb(156 47 28 / 0.35);
+  --shadow-sello: 4px 4px 0 0 var(--color-carbon-900); /* sombra "de sello", plana y desplazada */
+
+  /* ★ BONUS: animación de entrada registrada como utilidad → clase animate-entrada */
+  --animate-entrada: entrada 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+  @keyframes entrada {
+    from {
+      opacity: 0;
+      transform: translateY(1.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* 4. Estilos base de la página (pocos y globales) */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* que la barra fija no tape los títulos al saltar a un #ancla */
+  }
+
+  body {
+    @apply bg-crema-50 font-sans text-carbon-900 antialiased dark:bg-carbon-950 dark:text-crema-100;
+  }
+
+  ::selection {
+    @apply bg-azafran-300 text-carbon-900;
+  }
+}
