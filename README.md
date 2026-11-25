@@ -22,6 +22,10 @@ Bienvenido/a al repositorio oficial de entregas para la asignatura de Desarrollo
 * **Descripción:** Amplía la Culinary Odyssey de la Misión 3 con una pestaña "Mis recetas" para registrar recetas propias y listarlas desde un servidor local (`json-server`). Formulario no controlado con React Hook Form, validación con un esquema de Zod como única fuente de verdad (`zodResolver`, `coerce`, mensajes propios y un `refine` que impide marcar como vegana una receta con ingredientes de origen animal) y errores accesibles. Datos remotos con TanStack Query: `useQuery` para la lista, `useMutation` para guardar (POST) e `invalidateQueries` para que la lista se actualice sola, con estados de carga, error con reintento y éxito. Bonus: la respuesta del servidor también se valida con Zod (`safeParse`) y se apartan los registros corruptos, con el README incluido.
 * **Ubicación en el repo:** [`/Mision_4`](./Mision_4)
 
+### 🎨 [Misión 5: Pixel Perfect (Culinary Odyssey · Landing)](./Mision_5)
+* **Descripción:** Landing page de la Culinary Odyssey maquetada con Tailwind CSS v4, construida encima de la Misión 4 (la app completa aparece como demo en vivo). Configuración CSS-first (`@import "tailwindcss"` + `@theme`, sin `tailwind.config.js`) con un sistema de diseño propio (paleta tomate/azafrán/oliva/crema/carbón, tipografías, radios y sombras como tokens), diseño mobile-first probado a 360, 768 y 1280 px, Flexbox y Grid sin hacks de posicionamiento y modo oscuro por clase con botón y preferencia guardada. Bonus: animación de entrada con `@keyframes` registrada en `@theme` (`animate-entrada`), con el README incluido.
+* **Ubicación en el repo:** [`/Mision_5`](./Mision_5)
+
 ---
 
 ## 🛠️ Estructura del Repositorio
@@ -96,6 +100,49 @@ Programacion_Web_Cliente/
 │   │   │   ├── useFetch.js
 │   │   │   ├── useLocalStorage.js
 │   │   │   └── useMyRecipes.js
+│   │   ├── schema/
+│   │   │   └── recipeSchema.js
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   └── myRecipesApi.js
+│   │   ├── utils/
+│   │   │   └── logic.js
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── .gitignore
+│   ├── db.json
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── vite.config.js
+│   └── README.md
+├── Mision_5/
+│   ├── public/
+│   │   └── favicon.svg
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── landing/
+│   │   │   │   ├── AppDemo.jsx
+│   │   │   │   ├── Features.jsx
+│   │   │   │   ├── Footer.jsx
+│   │   │   │   ├── Hero.jsx
+│   │   │   │   ├── HowItWorks.jsx
+│   │   │   │   └── Navbar.jsx
+│   │   │   ├── ui/
+│   │   │   │   ├── Button.jsx
+│   │   │   │   ├── SectionHeading.jsx
+│   │   │   │   ├── ThemeToggle.jsx
+│   │   │   │   └── styles.js
+│   │   │   ├── RecipeApp.jsx
+│   │   │   └── ... (componentes de la M4 con Tailwind)
+│   │   ├── hooks/
+│   │   │   ├── useCreateRecipe.js
+│   │   │   ├── useFetch.js
+│   │   │   ├── useLocalStorage.js
+│   │   │   ├── useMyRecipes.js
+│   │   │   └── useTheme.js
 │   │   ├── schema/
 │   │   │   └── recipeSchema.js
 │   │   ├── services/
